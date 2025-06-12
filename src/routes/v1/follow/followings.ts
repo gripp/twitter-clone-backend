@@ -6,7 +6,12 @@ import FollowingsController from '../../../controllers/follow/followings.control
 
 const router = express.Router();
 
-router.get('/my',authentication, FollowingsController.myFollowings );
-router.get('/user/id/:id', authentication, validator(schema.userId, ValidationSource.PARAM), FollowingsController.userFollowings);
+router.get('/my', authentication, FollowingsController.myFollowings);
+router.get(
+  '/user/id/:id',
+  authentication,
+  validator(schema.userId, ValidationSource.PARAM),
+  FollowingsController.userFollowings
+);
 
 export default router;

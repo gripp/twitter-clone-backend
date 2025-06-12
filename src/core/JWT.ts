@@ -38,8 +38,7 @@ export default class JWT {
       return (await promisify(verify)(token, cert)) as JwtPayload;
     } catch (e) {
       // @ts-ignore
-      if (e && e.name === 'TokenExpiredError') 
-        throw new TokenExpiredError();
+      if (e && e.name === 'TokenExpiredError') throw new TokenExpiredError();
       throw new BadTokenError();
     }
   }

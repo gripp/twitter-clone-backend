@@ -1,16 +1,15 @@
-import { 
-    addAuthHeaders,
-    mockUserFindById,
-    mockJwtValidate,
-    getAccessTokenSpy,
-    mockFollowings,
-    mockGetByUserId,
-} from "../../../../mock";
+import {
+  addAuthHeaders,
+  mockUserFindById,
+  mockJwtValidate,
+  getAccessTokenSpy,
+  mockFollowings,
+  mockGetByUserId,
+} from '../../../../mock';
 
-  
 import app from '../../../../../src/app';
 import supertest from 'supertest';
-  
+
 describe('Feed Service - Fetch feed', () => {
   const endpoint = '/v1/feed/';
   const request = supertest(app);
@@ -32,4 +31,4 @@ describe('Feed Service - Fetch feed', () => {
     expect(mockFollowings).toBeCalledTimes(1);
     expect(mockGetByUserId).toBeCalledTimes(2);
   });
-  });
+});

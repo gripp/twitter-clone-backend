@@ -6,6 +6,4 @@ const router = express.Router();
 
 router.get('/', authentication, FeedController.getFeed);
 
-
 export default router;
-

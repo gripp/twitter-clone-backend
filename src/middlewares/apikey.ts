@@ -17,6 +17,5 @@ export default router.use(
 
     if (!apiKey) throw new ForbiddenError();
     return next();
-  }),
+  })
 );
-

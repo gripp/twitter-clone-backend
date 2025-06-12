@@ -6,6 +6,11 @@ import FollowController from '../../../controllers/follow/follow.controller';
 
 const router = express.Router();
 
-router.post('/id/:id', authentication, validator(schema.followeeId, ValidationSource.PARAM), FollowController.create);
+router.post(
+  '/id/:id',
+  authentication,
+  validator(schema.followeeId, ValidationSource.PARAM),
+  FollowController.create
+);
 
 export default router;
